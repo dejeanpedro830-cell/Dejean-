@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09111f">
+  <meta name="description" content="NEXTRA FX AI — a free Forex learning and market-analysis simulator.">
+  <title>NEXTRA FX AI | Forex Learning Dashboard</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="#"><img src="assets/icon.svg" alt=""><span>NEXTRA <b>FX AI</b><small>FOREX LEARNING LAB</small></span></a>
+      <div class="top-actions">
+        <span class="demo-pill"><i></i> DEMO MODE</span>
+        <button id="installBtn" class="outline-btn" hidden>Install website</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">LEARN THE MARKET · UNDERSTAND THE SIGNALS</p>
+          <h1>Smarter market study.<br><span>One signal at a time.</span></h1>
+          <p class="hero-copy">Explore how common Forex indicators work together in a clean, phone-friendly dashboard. This version uses generated sample prices for learning.</p>
+        </div>
+        <aside class="hero-note"><strong>Learning simulator</strong><p>No live prices, no broker connection, no trade execution and no guaranteed predictions.</p></aside>
+      </section>
+
+      <section class="controls card">
+        <label>Currency pair
+          <select id="pair">
+            <option>EUR/USD</option><option>GBP/USD</option><option>USD/JPY</option><option>AUD/USD</option><option>USD/ZAR</option>
+          </select>
+        </label>
+        <label>Study timeframe
+          <select id="timeframe"><option>1H sample</option><option>4H sample</option><option>1D sample</option></select>
+        </label>
+        <button id="analyse" class="primary-btn">Analyse sample</button>
+      </section>
+
+      <section class="metrics">
+        <article class="card metric"><span>Learning signal</span><strong id="signal" class="wait">WAIT</strong><small id="signalHint">Generate an analysis</small></article>
+        <article class="card metric"><span>Sample price</span><strong id="price">—</strong><small id="pairName">EUR/USD</small></article>
+        <article class="card metric"><span>RSI (14)</span><strong id="rsi">—</strong><small>Momentum study</small></article>
+        <article class="card metric"><span>Trend estimate</span><strong id="trend">—</strong><small>EMA 9 / EMA 21</small></article>
+      </section>
+
+      <section class="content-grid">
+        <article class="card chart-card">
+          <div class="card-head"><div><p class="eyebrow">PRICE MOVEMENT</p><h2>Sample price chart</h2></div><span class="chart-key"><i></i> Simulated close</span></div>
+          <canvas id="chart" aria-label="Illustrative simulated price chart"></canvas>
+          <p class="footnote">Illustrative generated data only — not a live market feed.</p>
+        </article>
+        <article class="card explanation">
+          <p class="eyebrow">HOW THE INDICATORS AGREE</p><h2 id="explainTitle">Ready to study?</h2>
+          <p id="explain" class="muted">Choose a pair and generate sample analysis to see an explanation.</p>
+          <div class="indicator"><span>EMA trend</span><b id="emaState">—</b></div>
+          <div class="indicator"><span>RSI momentum</span><b id="rsiState">—</b></div>
+          <div class="indicator"><span>MACD momentum</span><b id="macdState">—</b></div>
+          <div class="caution"><b>Remember</b><br>Indicators describe past sample movement. They cannot reliably predict what happens next.</div>
+        </article>
+      </section>
+
+      <section class="card history">
+        <div class="card-head"><div><p class="eyebrow">YOUR SESSION</p><h2>Analysis history</h2></div><button id="clear" class="outline-btn">Clear</button></div>
+        <div class="table-wrap"><table><thead><tr><th>Time</th><th>Pair</th><th>Timeframe</th><th>Signal</th><th>Sample price</th></tr></thead><tbody id="history"><tr><td colspan="5" class="empty">No analyses yet.</td></tr></tbody></table></div>
+      </section>
+
+      <section class="bottom-note"><b>Important:</b> NEXTRA FX AI is an educational simulator. It does not provide financial advice or real trading signals. Forex trading involves substantial risk. Do not use this demo to make real-money decisions.</section>
+    </main>
+    <footer>© <span id="year"></span> NEXTRA FX AI <span>·</span> Built for learning</footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

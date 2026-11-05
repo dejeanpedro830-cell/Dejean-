@@ -1,0 +1,13 @@
+{
+  "name": "NEXTRA FX AI",
+  "short_name": "NEXTRA FX",
+  "description": "Forex learning and sample signal simulator",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#09111f",
+  "theme_color": "#09111f",
+  "icons": [
+    {"src":"assets/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}
+  ]
+}
